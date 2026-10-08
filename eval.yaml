@@ -1,0 +1,14 @@
+name: StayLocal
+description: Open-book extraction. Instance accuracy requires exact fields, evidence in the document, and empty abstain fields.
+evaluation_framework: inspect-ai
+tasks:
+  - id: instance_accuracy
+    config: default
+    split: test
+    field_spec:
+      input: document
+      target: gold
+    solvers:
+      - name: generate
+    scores:
+      - name: instance_accuracy
